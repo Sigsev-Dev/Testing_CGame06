@@ -3,15 +3,27 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace UnityStandardAssets._2D
-{
+{	
+
     public class Restarter : MonoBehaviour
     {
-        private void OnTriggerEnter2D(Collider2D other)
+    	Vector3 originalPos;
+ 
+ 	void Start()
+  	{
+      	originalPos = new Vector3(gameObject.transform.position.x, 					gameObject.transform.position.y, 						gameObject.transform.position.z);
+ 
+  	}
+    	
+        void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Player")
+            if (other.gameObject.tag == "Player")
             {
-                SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
+                gameObject.transform.position = originalPos;
+                Instantiate(gameObject);
             }
         }
     }
 }
+
+

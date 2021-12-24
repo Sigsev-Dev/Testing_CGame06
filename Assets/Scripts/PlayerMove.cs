@@ -22,7 +22,6 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float jumpMultiplier;
     [SerializeField] private KeyCode jumpKey;
 
-
     private bool isJumping;
 
     private void Awake()
@@ -107,3 +106,4 @@ public class PlayerMove : MonoBehaviour
     }
 
 }
+
